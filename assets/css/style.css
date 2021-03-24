@@ -1,0 +1,32 @@
+.list-group {
+    padding-top: 2%;
+    font-size: 25px;
+}
+
+.custom-card-header {
+    color: white;
+    background-color: rgb(83, 71, 85);
+}
+input {
+    width: auto;
+    height: 50px;
+}
+.custom-button {
+    background-color: rgb(96, 96, 143);
+}
+.card {
+    width: 100%;
+    background-color: #ececec;
+}
+
+.city-name {
+    font-size: 50px;
+}
+h3 {
+    font-size: 40px;
+    padding-top: 5%;
+}
+
+#five-day-container {
+    background-color: lightgray;
+}
