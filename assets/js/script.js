@@ -5,7 +5,7 @@ var searchValueInputEl= document.querySelector('#search-value');
 var searchButton = document.getElementById('search-button');
 var cityHistoryButtonEl = document.querySelector("#city-history-button"); ///turn city list into button so it can be clicked on
 
-var APIkey = 'd510129f0bc104559e5e78714e1b6d72';
+var APIkey = '';
 
 
 
