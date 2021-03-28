@@ -21,43 +21,47 @@
     </div>
   </div>
 
-  <main class="justify">
-    <div class="col-12 col-md-4">
+  <main>
+    <section class="container-fluid">
+      <div class="col-12 col-md-4">
 
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search for city: </h3>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="username"></label>
-          <input placeholder="City" id="search-value" type="text" autofocus="true" class="form-input" />
-          <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
-              class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search for city: </h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label"></label>
+            <input placeholder="City" id="search-city" type="text" autofocus="true" class="form-input" />
+            <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
+                class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+        </div>
+       
+
+
       </div>
-      <!--class container" id=history -->
-      <div class="container col-12 col-md-4 center" id="history">
-        <p class="card-body">
-        <div class="past-search border" id="city-history-button"></div>
-        <!--create button for city in search-->
-       
-        List of cities
-       
-       
       </div>
-    </div>
-    
-    <!--currentweather-->
-    <div class="display-flex">
-      <h2 class="subtitle">Current Weather Conditions: <span id="weather"></span></h2>
-      <div id="current-weather-container" class="list-group"></div>
-    </div>
+      <div class="container col-12 col-md-12 text-center" >
+        <div>List of Cities:</div>
+        <div class="card-body">
 
-       <!--5 day weather-->
-    <div class="col-8-float-right">
-      <h2 class="card-header">Five Day Weather: <span id="five-day"></span></h2>
-      <div id="forecast-container" class="five-day-list-group"></div>
-    </div>
+          <div id="history"></div>
+        </div>
+      </div>
+      </div>
+      <!--currentweather-->
+      <div class="container col-12 col-md-12 text-center">
+        <h2 class="subtitle">Current Conditions: <div id="weather"></div>
+        </h2>
+        <div id="current-weather-container" class="current-list-group"></div>
+      </div>
 
+      <!--5 day weather-->
+      <div class="col-8-float-right">
+        <h2 class="card-header">Five Day Weather: <div id="five-day"></div>
+        </h2>
+        <div id="forecast-container" class="five-day-list-group"></div>
+      </div>
 
+    </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

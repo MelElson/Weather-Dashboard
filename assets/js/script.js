@@ -1,7 +1,7 @@
-var weatherContainer = document.getElementById('weather');
+var containerWeather = document.getElementById('weather');
 var forecastContainer = document.getElementById('five-day');
 var historyContainer = document.getElementById('history');
-var searchValueInputEl = document.querySelector('#search-value');
+var searchValueInputEl = document.querySelector('#search-city');
 var searchButton = document.getElementById('search-button');
 
 var APIkey = 'd510129f0bc104559e5e78714e1b6d72';
@@ -9,7 +9,7 @@ var APIkey = 'd510129f0bc104559e5e78714e1b6d72';
 
 
 function getApi() {
-  var searchValue = document.getElementById('search-value').value;
+  var searchValue = document.getElementById('search-city').value;
   var requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${APIkey}&units=imperial`;
 
   fetch(requestUrl)
@@ -18,38 +18,38 @@ function getApi() {
     })
     .then(function (data) {
       console.log(data);
-      $('#search-value').val('')
+      $('#search-city').val('')
       //temp
-      var temp = document.createElement('span');
+      var temp = document.createElement('div');
       temp.textContent = "Temp: " + data.main.temp + " F";
-      temp.classList = "list-group";
+      temp.classList = "current-list-group";
 
       //search city
       var cityEl = document.createElement('h3');
       cityEl.textContent = data.name;
       //humidity
-      var humidity = document.createElement('span');
+      var humidity = document.createElement('div');
       humidity.textContent = "Humidity: " + data.main.humidity + "% ";
-      humidity.classList = "list-group";
+      humidity.classList = "current-list-group";
       //wind speed
-      var windSpeed = document.createElement('span');
+      var windSpeed = document.createElement('div');
       windSpeed.textContent = "Wind Speed: " + data.wind.speed + "mph ";
-      windSpeed.classList = "list-group";
+      windSpeed.classList = "current-list-group";
       //weather icon next to city
       var weatherIcon = document.createElement("img")
       weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
       cityEl.appendChild(weatherIcon);
 
-      var currentDate = document.createElement("span")
+      var currentDate = document.createElement("div")
       currentDate.textContent = " (" + moment(data.value).calendar("MMM D, YYYY") + ") ";
       cityEl.appendChild(currentDate);
 
       //put all var into container
-      weatherContainer.innerHTML = '';
-      weatherContainer.append(cityEl, temp, humidity, windSpeed);
+      containerWeather.innerHTML = '';
+      containerWeather.append(cityEl, temp, humidity, windSpeed);
       var lon = data.coord.lon;
       var lat = data.coord.lat;
-      getUVIndex(lat, lon);
+      getUv(lat, lon);
       //cities in search on left side
 
       var searchNameEl = document.createElement('h3')
@@ -63,7 +63,7 @@ function getApi() {
 }
 
 // UV Index
-function getUVIndex(lat, lon) {
+function getUv(lat, lon) {
   var queryURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}`;
   fetch(queryURL)
     .then(function (response) {
@@ -71,67 +71,69 @@ function getUVIndex(lat, lon) {
     })
     .then(function (data) {
       console.log(data)
-      var UVIndex = document.createElement('span');
+      var UVIndex = document.createElement('div');
       UVIndex.textContent = "UV Index: " + data.value;
       console.log(data.value)
-      UVIndex.classList = "list-group"
-      weatherContainer.appendChild(UVIndex);
+      UVIndex.classList = "current-list-group"
+      containerWeather.appendChild(UVIndex);
+
     })
 }
 
 // five day forecast
 function getFiveDay() {
-  
-  var searchValue = document.getElementById('search-value').value;
+
+  var searchValue = document.getElementById('search-city').value;
   var fiveDayUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=imperial&appid=${APIkey}`;
-    
+
   fetch(fiveDayUrl)
     .then(function (response) {
       return response.json();
     })
 
     .then(function (data) {
-     
+
       forecastContainer.innerHTML = '';
-      for(let i=0; i < data.list.length; i +=8) {
+      for (let i = 0; i < data.list.length; i += 8) {
         var div = document.createElement("div");
         div.style.display = "inline-block";
         div.setAttribute('class', 'col-md-2  col-sm-4')
-      
-      
-      //date
-      var fivecurrentDate = document.createElement("span")
-      fivecurrentDate.textContent = moment(data.list[i].dt_txt).calendar("MMM D, YYYY");
-      div.appendChild(fivecurrentDate);
 
-      var temp5 = document.createElement('span');
-      temp5.textContent =  "Temp: " + data.list[i].main.temp  + " F";
-      temp5.classList = "five-day-list-group";
-      div.appendChild(temp5);
-      
-      
-      //humidity
-      var fivehumidity = document.createElement('span');
-      fivehumidity.textContent = "Humidity: " + data.list[i].main.humidity  + "% ";
-      fivehumidity.classList = "five-day-list-group";
-      div.appendChild(fivehumidity);
-      
-      //pic icon for weather
-      var pic = data.list[i].weather[0].icon
-      var fiveweatherIcon = document.createElement("img")
-      fiveweatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${pic}@2x.png`);
-      div.appendChild(fiveweatherIcon);
 
-      
-     
-     div.appendChild(temp5);
-     forecastContainer.appendChild(div);
+        //date
+        var fivecurrentDate = document.createElement("div")
+        fivecurrentDate.textContent = moment(data.list[i].dt_txt).calendar("MMM D, YYYY");
 
-     }
+
+        var temp5 = document.createElement('div');
+        temp5.textContent = "Temp: " + data.list[i].main.temp + " F";
+        temp5.classList = "five-day-list-group";
+
+
+
+        //humidity
+        var fivehumidity = document.createElement('div');
+        fivehumidity.textContent = "Humidity: " + data.list[i].main.humidity + "% ";
+        fivehumidity.classList = "five-day-list-group";
+
+
+        //pic icon for weather
+        var pic = data.list[i].weather[0].icon
+        var fiveweatherIcon = document.createElement("img")
+        fiveweatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${pic}@2x.png`);
+        fivehumidity.appendChild(fiveweatherIcon);
+
+
+        temp5.appendChild(fivehumidity);
+        fivecurrentDate.appendChild(temp5);
+        div.appendChild(fivecurrentDate);
+        forecastContainer.appendChild(div);
+
+      }
 
     })
 
-    
+
 }
 
 searchButton.addEventListener('click', getApi);
