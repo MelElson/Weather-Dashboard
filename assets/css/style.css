@@ -14,7 +14,6 @@
  
 
 
-
   
   main {
     margin: 20px auto;
@@ -41,6 +40,7 @@
 input {
     width: auto;
     height: 50px;
+    border: black;
 }
 .custom-button {
     background-color: rgb(96, 96, 143);
@@ -68,7 +68,7 @@ h3 {
 
 .card {
     background-color: rgba(222, 227, 228, 0.87);
-}
+} */
 
 /* FORM */
 .form-label,
@@ -407,4 +407,4 @@ h3 {
   }
 }
 
-
+ */

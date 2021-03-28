@@ -23,7 +23,40 @@
 
   <main>
     <section class="container-fluid">
-      <div class="col-12 col-md-4">
+
+
+      <div class="col-12 col-md-4 col-xl-3">
+        
+          <h3 class="card-header text-uppercase">Search for city: </h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label"></label>
+            <input placeholder="City" id="search-city" type="text" autofocus="true" class="form-input" />
+            <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
+                class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+          <div class="container col-12 col-md-4 col-xl-3">
+            <div class="card-body">
+              <div id="history"></div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      
+
+      </div>
+    </section>
+    <!--current weather-->
+
+    <section class="container my-5">
+      <div class="row">
+        <div class="col-12 col-md-4 col-xl-9">
+          <h class='subtitle'>current Conditions: <div id="weather"></div>
+            </h2>
+            <div id="current-weather-container" class='current-list-group'></div>
+        </div>
+        <!-- <div class="col-12 col-md-4">
+     
 
         <div class="card">
           <h3 class="card-header text-uppercase">Search for city: </h3>
@@ -33,33 +66,30 @@
             <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
                 class="fa fa-search" aria-hidden="true"></i></button>
           </form>
-        </div>
-       
+        </div>    -->
 
 
-      </div>
-      </div>
-      <div class="container col-12 col-md-12 text-center" >
-        <div>List of Cities:</div>
-        <div class="card-body">
+    </section>
 
-          <div id="history"></div>
-        </div>
-      </div>
-      </div>
-      <!--currentweather-->
-      <div class="container col-12 col-md-12 text-center">
-        <h2 class="subtitle">Current Conditions: <div id="weather"></div>
-        </h2>
-        <div id="current-weather-container" class="current-list-group"></div>
-      </div>
 
-      <!--5 day weather-->
-      <div class="col-8-float-right">
-        <h2 class="card-header">Five Day Weather: <div id="five-day"></div>
-        </h2>
-        <div id="forecast-container" class="five-day-list-group"></div>
-      </div>
+
+
+    <!-- <section class="container my-5  text-dark">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+            <h class='subtitle'>current Conditions: <div id ="weather"></div></h2>
+            <div id="current-weather-container" class='current-list-group'></div>
+            
+          </div>
+        </section> -->
+
+    <!--5 day weather-->
+
+    <div class="col-8-float-right">
+      <h2 class="card-header">Five Day Weather: <div id="five-day"></div>
+      </h2>
+      <div id="forecast-container" class="five-day-list-group"></div>
+    </div>
 
     </section>
   </main>

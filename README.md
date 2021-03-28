@@ -17,11 +17,10 @@
 
 
 ## Title
-Personal portfolio
+Weather Dashboard
 
 ## General Info
-The purpose of this task is to create a time quiz using multiple choice questions that runs in the browser and stores highscores so that the user can gauge their progress. 
-
+The purpose of this task is to create a weather app that can run in the browser
 ## Technologies 
 The site uses HTML, CSS code, Javascript
 
@@ -35,25 +34,17 @@ Pull requests are encouraged. Please make sure to update as appropriate
 
 # Steps
 Steps taken by user
-	• User is given directions when the page loads. When clicking on the start button the quiz is launched. 
-	• The user is given 60 seconds to a multiple choice quiz. Wrong answers deduct 10 seconds from the quiz. 
-	• The user has 60 seconds to complete the quiz. If time reaches zero a message displays, "Time's Up"
-	• When a user answers correctly the score counter increases by 1.
-    •  If the user answers incorrectly no score is added. 
-	• At the end of the quiz the user is prompted to enter initials. The brower will store the scores until the user clicks on 'Clear High Score'.
+	• User is given a dashboard where the can input the name of the city that they want the weather for. 
+	• The user is presented with local weather condtions for the city that they selected. 
+	• The current weather show a weather icon, temp, humidity, windspeed, and uv index
+	• The user is also presented with the five day forecast as well. 
+    • The five day forecast includes temp, humidity adn weather icon for the weather 
+	
     
 
-### Start of Quiz
-![Changed HTML](./assets/images/StartQuiz.png)
+### Weather Dashboard
+![Changed HTML](./assets/images/screenshotweatherdashboard.png)
 
-### Quiz Questions
-![Changed HTML](./assets/images/QuizQuestions.png)
+### City Serach
+![Changed HTML](./assets/images/screenshotsearchforcity.png)
 
-### Score and prompt for user initials
-![Changed HTML](./assets/images/ScoreandEnterInitial.png)
-
-### High Scores
-![Changed HTML](./assets/images/HighScoreList.png)
-
-### Screen shot hmtl javascript
-![Changed HTML](./assets/images/htmlcodeandJavaScript.png)
