@@ -25,8 +25,8 @@ The purpose of this task is to create a weather app that can run in the browser
 The site uses HTML, CSS code, Javascript
 
 ## Installation
-To access the website go to https://melelson.github.io/Coding-Quiz-Challenge/ 
-To clone https://github.com/MelElson/Coding-Quiz-Challenge
+To access the website go to https://melelson.github.io/Weather-Dashboard/
+To clone https://github.com/MelElson/Weather-Dashboard
 
 
 # Collaboration 
@@ -43,8 +43,8 @@ Steps taken by user
     
 
 ### Weather Dashboard
-![Changed HTML](./assets/images/screenshotweatherdashboard.png)
+![Changed HTML](./assets/images/weatherdashboard.png)
 
 ### City Serach
-![Changed HTML](./assets/images/screenshotsearchforcity.png)
+![Changed HTML](./assets/images/searchforcity.png)
 
