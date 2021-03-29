@@ -14,7 +14,7 @@
   <title>Weather Dashboard</title>
 </head>
 
-<body>
+<body class="flex-column min-100-vh">
   <div class="jumbotron bg-dark text-white text-center">
     <div class="container">
       <h1 class="display-1 ">Weather Dashboard</h1>
@@ -22,74 +22,51 @@
   </div>
 
   <main>
+
     <section class="container-fluid">
+      <div class='row'>
+        <div class="col-12 col-md-4 col-xl-3">
+          <div class="card">
 
-
-      <div class="col-12 col-md-4 col-xl-3">
-        
-          <h3 class="card-header text-uppercase">Search for city: </h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label"></label>
-            <input placeholder="City" id="search-city" type="text" autofocus="true" class="form-input" />
-            <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
-                class="fa fa-search" aria-hidden="true"></i></button>
-          </form>
-          <div class="container col-12 col-md-4 col-xl-3">
-            <div class="card-body">
-              <div id="history"></div>
-            </div>
+           <!--Search for city and input-->
+            <h3 class="card-header text-uppercase">Search for city: </h3>
+            <form id="user-form" class="card-body">
+              <label class="form-label"></label>
+              <input placeholder="City" id="search-city" type="text" autofocus="true" class="form-input" />
+              <br>
+              <br>
+              <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
+                  class="fa fa-search" aria-hidden="true"></i></button>
+              <div class="card-body">
+                <div id="history"></div>
+              </div>
+            </form>
+            <div class="container col-12 col-md-4 col-xl-3"></div>
           
           </div>
         </div>
-      </div>
-      
-
-      </div>
-    </section>
-    <!--current weather-->
-
-    <section class="container my-5">
-      <div class="row">
-        <div class="col-12 col-md-4 col-xl-9">
-          <h class='subtitle'>current Conditions: <div id="weather"></div>
-            </h2>
-            <div id="current-weather-container" class='current-list-group'></div>
-        </div>
-        <!-- <div class="col-12 col-md-4">
-     
-
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search for city: </h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label"></label>
-            <input placeholder="City" id="search-city" type="text" autofocus="true" class="form-input" />
-            <button class="btn btn-outline-sceondary custom-button" type="button" id="search-button"><i
-                class="fa fa-search" aria-hidden="true"></i></button>
-          </form>
-        </div>    -->
 
 
-    </section>
+        <!--current weather-->
+
+        <div class="container  col-6 .col-md-4 my-5">
+          <div class="row">
+            <div class="col-12 col-md-4 col-xl-9">
+              <h class='subtitle'>Current Conditions: <div id="weather"></div>
+                </h2>
+                <div id="current-weather-container" class='current-list-group'></div>
+            </div>
 
 
-
-
-    <!-- <section class="container my-5  text-dark">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-3">
-            <h class='subtitle'>current Conditions: <div id ="weather"></div></h2>
-            <div id="current-weather-container" class='current-list-group'></div>
-            
           </div>
-        </section> -->
-
-    <!--5 day weather-->
-
-    <div class="col-8-float-right">
-      <h2 class="card-header">Five Day Weather: <div id="five-day"></div>
-      </h2>
-      <div id="forecast-container" class="five-day-list-group"></div>
-    </div>
+  
+         <!--five day weather-->
+          <div class="col-8-float-right mt-2">
+            <h2 class="card-header">Five Day Weather:
+            </h2>
+            <div id="five-day"></div>
+            <div id="forecast-container" class="five-day-list-group"></div>
+          </div>
 
     </section>
   </main>

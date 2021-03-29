@@ -1,11 +1,9 @@
 var containerWeather = document.getElementById('weather');
 var forecastContainer = document.getElementById('five-day');
 var historyContainer = document.getElementById('history');
-var searchValueInputEl = document.querySelector('#search-city');
-var searchButton = document.getElementById('search-button');
 
+var searchButton = document.getElementById('search-button'); 
 var APIkey = 'd510129f0bc104559e5e78714e1b6d72';
-
 
 
 function getApi() {
@@ -13,7 +11,7 @@ function getApi() {
   var requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${APIkey}&units=imperial`;
 
   fetch(requestUrl)
-    .then(function (response) {
+    .then(function (response) { 
       return response.json();
     })
     .then(function (data) {
@@ -71,12 +69,15 @@ function getUv(lat, lon) {
     })
     .then(function (data) {
       console.log(data)
+      
       var UVIndex = document.createElement('div');
       UVIndex.textContent = "UV Index: " + data.value;
       console.log(data.value)
       UVIndex.classList = "current-list-group"
-      containerWeather.appendChild(UVIndex);
-
+      containerWeather.appendChild(UVIndex)
+      //change colors based on uv index value
+  
+       
     })
 }
 
@@ -139,5 +140,5 @@ function getFiveDay() {
 searchButton.addEventListener('click', getApi);
 searchButton.addEventListener('click', getFiveDay);
 window.addEventListener("load", function () {
-  window.localStorage.getItem("history")
+window.localStorage.getItem("history")
 })
