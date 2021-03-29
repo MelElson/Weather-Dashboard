@@ -75,8 +75,15 @@ function getUv(lat, lon) {
       console.log(data.value)
       UVIndex.classList = "current-list-group"
       containerWeather.appendChild(UVIndex)
+      
       //change colors based on uv index value
-  
+      if (data.value > 8 ) {
+        UVIndex.style.backgroundColor = "red";
+    } else if (data.value < 4  ) {
+        UVIndex.style.backgroundColor = "green";
+    } else   {
+        UVIndex.style.backgroundColor = "orange";
+    } ;
        
     })
 }
